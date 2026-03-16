@@ -4,28 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Hub Maklumat Masjid</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/logo.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        /* Efek tambahan untuk butang filter yang aktif */
+        .filter-btn.active {
+            background: rgba(59, 130, 246, 0.5);
+            border-color: rgba(59, 130, 246, 0.8);
+            color: white;
+        }
+    </style>
 </head>
 <body class="p-4 md:p-8 bg-[#0f172a]">
     
     <div class="max-w-2xl mx-auto">
-        <header class="mb-10 pt-4 flex items-center justify-between">
+        <header class="mb-8 pt-4 flex items-center justify-between">
             <div>
                 <h1 class="text-3xl font-extrabold tracking-tighter text-white">Hub<span class="text-blue-400">Masjid</span></h1>
-                <p class="text-gray-400 text-sm">Informasi & Dokumen Rasmi Terkini</p>
+                <p class="text-gray-400 text-sm italic">"Pusat Maklumat Digital Kariah"</p>
             </div>
-         <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-white/10 glass p-1">
-    <img src="assets/logo.png" alt="Logo Masjid" class="w-full h-full object-cover rounded-full">
-</div>
+            <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-white/10 glass p-1 shadow-lg shadow-blue-500/20">
+                <img src="assets/logo.png" alt="Logo Masjid" class="w-full h-full object-cover rounded-full bg-slate-800">
+            </div>
         </header>
 
-        <div id="loading" class="text-center py-10 text-gray-500">Memuatkan informasi...</div>
-        <div id="feed-container">
+        <div class="glass p-4 rounded-2xl mb-8 flex items-center gap-4 border-l-4 border-l-blue-500">
+            <div class="text-2xl">📢</div>
+            <div>
+                <p class="text-[10px] uppercase tracking-widest text-blue-400 font-bold">Hebahan Terkini</p>
+                <p class="text-white text-sm">Semak jadual khutbah dan urusan jenazah di sini secara real-time.</p>
+            </div>
+        </div>
+
+        <div class="flex gap-2 mb-8 overflow-x-auto pb-2 no-scrollbar">
+            <button class="filter-btn glass px-5 py-2 rounded-full text-xs font-semibold whitespace-nowrap active">Semua</button>
+            <button class="filter-btn glass px-5 py-2 rounded-full text-xs font-semibold whitespace-nowrap text-blue-300">Khutbah</button>
+            <button class="filter-btn glass px-5 py-2 rounded-full text-xs font-semibold whitespace-nowrap text-green-300">Jenazah</button>
+            <button class="filter-btn glass px-5 py-2 rounded-full text-xs font-semibold whitespace-nowrap text-yellow-300">Kebajikan</button>
+        </div>
+
+        <div id="loading" class="text-center py-20">
+            <div class="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500 mb-4"></div>
+            <p class="text-gray-500 text-sm">Menyelaras data dari server masjid...</p>
+        </div>
+        
+        <div id="feed-container" class="space-y-4">
             </div>
 
         <footer class="text-center py-10 mt-10 border-t border-white/5">
-            <p class="text-xs text-gray-600">Sistem Automasi Masjid v1.0 | PC Masjid i7-4770</p>
+            <p class="text-[10px] text-gray-600 uppercase tracking-[0.2em] mb-2">Automated Management System</p>
+            <p class="text-xs text-gray-500">Dikawal selia oleh Lead Digital Coordinator</p>
+            <div class="mt-4 opacity-30 grayscale hover:grayscale-0 transition cursor-help" title="Powered by i7-4770 Infrastructure">
+                <span class="text-[10px] bg-white/10 px-2 py-1 rounded text-white">v1.0.2-Stable</span>
+            </div>
         </footer>
     </div>
 
