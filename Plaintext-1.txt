@@ -1,0 +1,17 @@
+masjid-smart-hub/
+├── .github/
+│   └── workflows/
+│       └── auto-playbook.yml    # Automasi untuk e-book view
+├── assets/
+│   ├── css/
+│   │   └── style.css            # Custom glassmorphism styling
+│   └── js/
+│       └── app.js               # Logik untuk tarik data JSON
+├── files/
+│   └── .gitkeep                 # Folder untuk simpan PDF (kosong awal)
+├── data.json                   # Pangkalan data utama
+├── index.html                   # Dashboard Jemaah (Tailwind + Glass)
+├── reader.html                  # Paparan "Google Playbook" PDF
+├── bot_masjid.py               # Skrip Python (Run 24/7 di Windows)
+├── requirements.txt             # Keperluan library Python
+└── README.md
