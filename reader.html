@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembaca Dokumen Masjid</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #1a1a1a; }
+        iframe { border: none; width: 100%; height: calc(100% - 60px); }
+    </style>
+</head>
+<body>
+    <div class="h-[60px] bg-[#0f172a] flex items-center justify-between px-4 border-b border-white/10">
+        <a href="index.html" class="text-gray-300 text-sm flex items-center gap-2">
+            ← Kembali
+        </a>
+        <h1 class="text-white font-medium text-sm">Paparan Dokumen</h1>
+        <div class="w-10"></div> </div>
+    
+    <div id="iframe-container" class="h-full">
+        </div>
+
+    <script>
+        // Ambil URL PDF dari parameter '?file='
+        const urlParams = new URLSearchParams(window.location.search);
+        const pdfUrl = urlParams.get('file');
+
+        if (pdfUrl) {
+            // Guna Google Docs Viewer untuk 'Playbook' experience
+            const viewerUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(pdfUrl)}&embedded=true`;
+            document.getElementById('iframe-container').innerHTML = `
+                <iframe src="${viewerUrl}" allow="autoplay"></iframe>
+            `;
+        } else {
+            document.body.innerHTML = '<p class="text-center text-white pt-20">Ralat: Fail tidak ditemui.</p>';
+        }
+    </script>
+</body>
+</html>
